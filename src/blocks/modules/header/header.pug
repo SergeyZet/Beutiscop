@@ -1,0 +1,38 @@
+-
+	const menuService = [{className:'hair', href:'javascript:void(0)', value:'Hair'},{className:'cosm', href:'javascript:void(0)', value:'Cosmetic'},{className:'manic', href:'javascript:void(0)', value:'Manicure'},{className:'massage', href:'javascript:void(0)', value:'Massage'}]
+-
+	const notif = [{className:'favorite', href:'javascript:void(0)', value:'favorite', active:true}, {className:'notif', href:'javascript:void(0)', value:'notification', active:false}, {className:'chat', href:'javascript:void(0)', value:'chat', active:false}]
+
+header.page-header
+	.layout-position--header
+		.container.page-header__wrap
+			.container.page-header__left-block
+				.page-header__burger
+					+link('burger-menu-btn', 'javascript:void(0)', 'Открыть меню')
+				.page-header__logo
+					+logo('img/logo.svg', 'Бьютископ')
+				.page-header__location
+					.location
+						+link('location__link','javascript:void(0)', 'Город' )
+			.container.page-header__menu
+				.menu-service.page-header__menu-service
+					+social('menu-service', menuService)
+				.page-header__btn-block
+					+linkBtn('Катталог мастеров','javascript:void(0)')
+					+linkBtn('Стать специалистом','javascript:void(0)','link-btn--white-style')
+			.container.page-header__right-block
+				.notification.page-header__notification
+					+list('notification__list')
+						each item in notif
+							if item.active
+								li.notification__item.notification__item--active
+									+link(`notification__link notification__link--${item.className}`, `${item.href}`, `${item.value}`)
+							else
+								li.notification__item
+									+link(`notification__link notification__link--${item.className}`, `${item.href}`, `${item.value}`)
+				.user-block.page-header__user-block
+					+button('btn-login-menu', 'Registration')
+					.user-block__login-links
+						+link('enter-site-link','javascript:void(0)','Вход')
+						+link('registration-site-link','javascript:void(0)','Регистрация')
+

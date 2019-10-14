@@ -1,0 +1,123 @@
+* {
+	box-sizing: border-box;
+}
+html {
+	min-width: 320px;
+	font-size: 16px;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Arial', 'sans-serif';
+	font-size: 16px;
+	width: 100%;
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0;
+	line-height: 1.4;
+}
+h1, h2, h3, h4, h5, h6, ul, p {
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+}
+img {
+	width: 100%;
+	height: auto;
+}
+ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+a {
+	display: inline-block;
+}
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	overflow: hidden;
+}
+.maincontent {
+	flex: 1;
+}
+.wrapper {
+	min-height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.layout-position {
+	display: flex;
+	width: 100%;
+	max-width: 1440px;
+	padding-left: 135px;
+	padding-right: 135px;
+	@media(max-width: @phone) {
+		min-width: 320px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	@media (max-width:@tablet) {
+		padding-left: 22px;
+		padding-right: 22px;
+	}
+}
+.layout-position--header {
+	display: flex;
+	width: 100%;
+	max-width: 1440px;
+	padding-left: 30px;
+	padding-right: 30px;
+	@media(max-width: @phone) {
+		min-width: 320px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	@media (max-width:@tablet) {
+		padding-left: 22px;
+		padding-right: 22px;
+	}
+}
+/* .img-responsive {
+	max-width: 500px;
+	width: 100%;
+	height: auto;
+} */
+input {
+	border: none;
+}
+.visually-hidden {
+	position: absolute;
+	visibility: hidden;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	bottom: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+/* Для Chrome */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0;
+}
+.visual-not {
+	display: none;
+}
+input[type="number"]{
+	-moz-appearance: textfield;
+}
+[hidden] { display: none }

@@ -1,0 +1,248 @@
+.page-header {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: @c-w;
+	&__burger {
+		width: 20px;
+		height: 20px;
+		position: relative;
+		margin-top: 10px;
+		margin-right: 40px;
+		font-size: 0;
+		display: none;
+		cursor: pointer;
+		@media(max-width: @desktop) {
+			display: block;
+		}
+		@media(max-width: @phone) {
+			margin-left: 20px;
+		}
+	}
+	&__wrap {
+		width: 100%;
+		align-items: flex-start;
+		min-height: 68px;
+		padding-top: 5px;
+		padding-bottom: 12px;
+	}
+	&__logo {
+		width: 203px;
+		height: auto;
+		margin-top: 10px;
+		margin-right: 20px;
+		@media(max-width: @phone) {
+			display: none;
+		}
+	}
+	&__location {
+		margin-top: 10px;
+		margin-right: 30px;
+		@media (max-width:@desktop-big) {
+			display: none;
+		}
+	}
+	&__menu-service {
+		margin-right: 15px;
+		@media(max-width: @tablet) {
+			display: none;
+		}
+	}
+	&__btn-block {
+		margin-right: -15px;
+		@media (max-width:@desktop) {
+			display: none;
+		}
+	}
+	&__notification {
+		max-width: 165px;
+		margin-top: 16px;
+		margin-right: 45px;
+		@media (max-width:@desktop) {
+			margin-right: 25px;
+		}
+	}
+	&__user-block {
+		margin-top: 15px;
+	}
+}
+.page-header__left-block {
+	align-items: center;
+	max-width: 300px;
+	min-height: 46px;
+}
+.page-header__menu {
+	max-width: 950px;
+}
+
+.location {
+	padding: 5px;
+}
+.location__link {
+	padding-left: 20px;
+	.ff-300();
+	font-size: @font-14;
+	background: url('@{bg-icon}location.svg') no-repeat left center;
+	&:hover,
+	&:focus {
+		transform: scale(1.05);
+	}
+}
+.menu-service {
+	&__list{
+		.container();
+		margin-right: -15px;
+	}
+	&__item {
+		margin-top: 10px;
+		margin-right: 15px;
+	}
+	&__link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 40px;
+		height: 40px;
+		font-size: 0;
+		border-radius: 50%;
+	}
+	&__link--hair {
+		background: @c-blue url('@{bg-icon}hair.svg') no-repeat center;
+		&:hover,
+		&:focus {
+			background-color: lighten(@c-blue, 4%);
+		}
+	}
+	&__link--cosm {
+		background: @c-red url('@{bg-icon}cosmetic.svg') no-repeat center;
+		&:hover,
+		&:focus {
+			background-color: lighten(@c-red, 4%);
+		}
+	}
+	&__link--manic {
+		background: @c-yell url('@{bg-icon}manicure.svg') no-repeat center;
+		&:hover,
+		&:focus {
+			background-color: lighten(@c-yell, 4%);
+		}
+	}
+	&__link--massage {
+		background: @c-green url('@{bg-icon}massage.svg') no-repeat center;
+		&:hover,
+		&:focus {
+			background-color: lighten(@c-green, 4%);
+		}
+	}
+}
+.notification {
+	&__list {
+		margin-right: -20px;
+	}
+	&__item {
+		position: relative;
+		margin-right: 20px;
+		font-size: 0;
+		@media (max-width:@phone) {
+			margin-right: 30px;
+		}
+	}
+	&__item--active::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: @c-red;
+		transform: translateX(-100%);
+	}
+	&__link {
+		font-size: 0;
+		width: 25px;
+		height: 30px;
+		&:hover,
+		&:focus {
+			transform: scale(1.05);
+			opacity: 0.95;
+		}
+	}
+	&__link--favorite {
+		background: transparent url('@{bg-icon}heart.svg') no-repeat center;
+		background-size: 75%;
+	}
+	&__link--notif {
+		background: transparent url('@{bg-icon}notif.svg') no-repeat center;
+		background-size: 75%;
+	}
+	&__link--chat {
+		background: transparent url('@{bg-icon}mail.svg') no-repeat center;
+		background-size: 75%;
+	}
+}
+.btn-login-menu {
+	width: 20px;
+	height: 20px;
+	background: transparent url('@{bg-icon}user.svg') no-repeat center;
+	background-size: 60%;
+}
+.user-block {
+	.container();
+	padding: 5px;
+	.ff-300();
+	font-size: @font-14;
+}
+.user-block__login-links {
+	@media (max-width:@desktop-big) {
+		display: none;
+	}
+}
+.btn-login-menu {
+	margin-right: 15px;
+	cursor: default;
+	@media (max-width:@desktop-big) {
+		cursor: pointer;
+		&:hover,
+		&:focus {
+			transform: scale(1.05);
+			opacity: 0.95;
+		}
+	}
+}
+.enter-site-link {
+	margin-right: 20px;
+}
+.enter-site-link,
+.registration-site-link {
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+.burger-menu-btn {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 20px;
+	height: 2px;
+	font-size: 0;
+	background-color: @c-main;
+	&::after,
+	&::before {
+		content: '';
+		position: absolute;
+		width: 20px;
+		height: 2px;
+		background-color: @c-main;
+	}
+	&::after {
+		top: 8px;
+		left:0;
+	}
+	&::before {
+		bottom: 8px;
+		left:0;
+	}
+
+}

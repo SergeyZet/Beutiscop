@@ -1,0 +1,30 @@
+.link {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	font-size: @font;
+	text-decoration: none;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	vertical-align: top;
+	color: #000000;
+}
+.link-btn {
+	max-width: 300px;
+	padding: 10px 20px;
+	.ff-600();
+	font-size: @font-14;
+	color: @c-w;
+	border-radius: 50px;
+	background-color: @c-main;
+	&--white-style {
+		.ff-300();
+		padding-top: 9px;
+		padding-bottom: 9px;
+		color: @c-main;
+		background-color: @c-w;
+		border: 1px solid @c-main;
+	}
+}

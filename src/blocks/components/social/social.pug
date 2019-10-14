@@ -1,0 +1,5 @@
+mixin social(mainClass,items)
+	+list(`${mainClass}__list`)
+		each item in items
+			li(class=`${mainClass}__item`)
+				+link(`${mainClass}__link ${mainClass}__link--${item.className}`, `${item.href}`, `${item.value}`)

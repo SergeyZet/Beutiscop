@@ -1,0 +1,5 @@
+mixin linkBtn(value,href,className)
+	if className
+		+link(`link-btn ${className}`,`${href}`,`${value}`)
+	else
+		+link('link-btn',`${href}`,`${value}`)

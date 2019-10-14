@@ -1,0 +1,19 @@
+
+mixin cards(cards)
+	each card in cards
+		if card.fr
+			.card.card--rewers
+				.card-text
+					+subtitle('card-title',`${card.title}`)
+					+discr('card-discription', `${card.discription}`) 
+					+button('card-btn', 'Оставить заявку', 'button')
+				.card-picture
+					+img(`${card.src}`, '.jpg', `${card.alt}`, "550", "320")
+		else
+			.card
+				.card-text
+					+subtitle('card-title',`${card.title}`)
+					+discr('card-discription', `${card.discription}`) 
+					+button('card-btn', 'Оставить заявку', 'button')
+				.card-picture
+					+img(`${card.src}`, '.jpg', `${card.alt}`, "550", "320")

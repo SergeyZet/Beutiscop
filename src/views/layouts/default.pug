@@ -1,0 +1,30 @@
+include ../../blocks/components/img/img
+include ../../blocks/components/menu/menu
+include ../../blocks/components/cards/cards
+include ../../blocks/components/title/title
+include ../../blocks/components/discription/discr
+include ../../blocks/components/list/list
+include ../../blocks/components/link/link
+include ../../blocks/components/logo/logo
+include ../../blocks/components/subtitle/subtitle
+include ../../blocks/components/button/button
+include ../../blocks/components/social/social
+include ../../blocks/components/picture/picture
+include ../../blocks/components/link-btn/link-btn
+//-section
+include ../../blocks/section/service/service
+
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang="ru")
+	head
+		include ../includes/head
+	body.page-body
+		div.wrapper
+			div.maincontent
+				include ../../blocks/modules/header/header
+				block content
+			include ../../blocks/modules/footer/footer
+		include ../includes/scripts

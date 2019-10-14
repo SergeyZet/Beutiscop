@@ -1,0 +1,12 @@
+//- var menu = ['Home', 'Information', 'Price']
+//- var navLink = ['index.html', 'info.html', 'price.html']
+//- var page = 'Information'
+mixin nav(menu, navLink, page)
+	nav.page-navigation
+		ul.list.nav-list
+			each item in menu
+				li.list-item.nav-list__item
+					if item == page
+						a.link.nav-list__link.nav-list__link--active= item
+					else
+						a.link.nav-list__link(href="javascript:void(0)")= item
