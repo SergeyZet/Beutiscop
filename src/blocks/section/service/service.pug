@@ -1,0 +1,22 @@
+-
+	const slider = [{src:'../img/man-hair', alt:'Стрижка', text:'Мужская стрижка'},{src:'../img/man-hair', alt:'Стрижка', text:'Мужская стрижка'},{src:'../img/man-hair', alt:'Стрижка', text:'Мужская стрижка'}]
+
+mixin service()
+	section.service
+		.layout-position
+			+title('service__title','У нас есть всё что вам нужно!')
+			.service__carousel
+				.slider
+					ul.slider__list
+						each item in slider
+							li.slider__item
+								.slider__item-img
+									+picture(`${item.src}`, '.jpg', `${item.alt}`)
+								.slider__item-text
+									span.slide-discr
+										|#{item.text}
+				.controls
+					button(class='btn slider__btn-prev' type='button')
+						.slider__btn-icon
+					button(class='btn slider__btn-next' type='button')
+						.slider__btn-icon

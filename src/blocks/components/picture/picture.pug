@@ -1,8 +1,9 @@
 mixin picture(src, format, alt)
 	picture
-		source(type="image/webp" media='(min-widhth:1200px)' srcset=`${src}-desktop.webp`)
-		source(media='(min-widhth:1200px)' srcset=`${src}-desktop${format}`)
-		source(type="image/webp" media='(min-widhth:1024px)' srcset=`${src}-tablet.webp`)
-		source(media='(min-widhth:1024px)' srcset=`${src}-tablet${format}`)
-		source(type="image/webp" width=`${width}` height=`${height}` srcset=`${src}.webp`)
-		img(src=`${src}-mobile${format}`, alt=`${alt}`)
+		source(type="image/webp" media='(max-width:600px)' srcset=`${src}-mobile.webp`)
+		source(media='(max-width:600px)' srcset=`${src}-mobile${format}`)
+		source(type="image/webp" media='(max-width:900px)' srcset=`${src}-tablet.webp`)
+		source(media='(max-width:900px)' srcset=`${src}-tablet${format}`)
+		source(type="image/webp" srcset=`${src}-desktop.webp`)
+		img(src=`${src}-desktop${format}`, alt=`${alt}`)
+			
