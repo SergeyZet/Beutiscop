@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![gulp-pug-starter](https://i.imgur.com/0AG0txq.png)
 # gulp-pug-starter
 
@@ -207,3 +208,6 @@ header.header
 ## Контакты
 * ВКонтакте: [@andreyalexeich](https://vk.com/andreyalexeich)
 * Telegram: [@andreyalexeich](https://t-do.ru/andreyalexeich)
+=======
+# Beutiscop
+>>>>>>> bbeb48aade4e8bf02fc797393d3fa841a7a776db
