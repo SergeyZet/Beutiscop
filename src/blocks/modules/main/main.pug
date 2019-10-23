@@ -1,26 +1,7 @@
-//-block hero
--
-	const adv = [{src:'../img/icon/m-search.svg',alt:'',discr:'Удобный поиск мастера в сфере красоты'}, {src:'../img/icon/base.svg',alt:'',discr:'Самая большая база мастеров в салонах и на дому'},{src:'../img/icon/rate.svg',alt:'',discr:'Реальный рейтинг мастеров и салонов'},{src:'../img/icon/gift.svg',alt:'',discr:'Бонусы, подарки и акции для любимых клиентов'}]
+
 main.index-main
-	section.hero
-		.layout-position
-			.hero__inner
-				.hero__content
-					h1.hero__title
-						|Aгрегатор салонов красоты и частных мастеров
-					span.hero__promo
-						|Все специалисты на одном сайте
-				.advantages.hero__advantages
-					ul.advantages__list
-						each item in adv
-							li.advantages__list-item
-								.card
-									.card__img.advantages__card-img
-										+img(`${item.src}`, `${item.alt}`)
-									.card__text.advantages__card-text
-										p.card__text-item
-											|#{item.discr}
+	+hero()
 	+service()
-	//- section.service
-	//- 	.layout-position
-	//- 		+title('service-title','У нас есть всё что вам нужно!')
+	+promo()
+	+comments()
+	+articles()

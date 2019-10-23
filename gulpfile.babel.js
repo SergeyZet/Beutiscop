@@ -18,6 +18,7 @@ import imageminPngquant from "imagemin-pngquant";
 import imageminZopfli from "imagemin-zopfli";
 import imageminMozjpeg from "imagemin-mozjpeg";
 import imageminGiflossy from "imagemin-giflossy";
+import spriteSvg from "gulp-svg-sprite";
 import imageminWebp from "imagemin-webp";
 import webp from "gulp-webp";
 import favicons from "gulp-favicons";
@@ -65,16 +66,23 @@ const webpackConfig = require("./webpack.config.js"),
 		images: {
 			src: [
 				"./src/img/**/*.{jpg,jpeg,png,gif,svg}",
-				"!./src/img/svg/*.svg",
+				"!./src/img/icon/*.svg",
 				"!./src/img/favicon.{jpg,jpeg,png,gif}"
 			],
 			dist: "./dist/img/",
 			watch: "./src/img/**/*.{jpg,jpeg,png,gif,svg}"
 		},
-		webp: {
-			src: "./src/img/**/*.{jpg,jpeg,png}",
+			src: [
+				"./src/img/icon/**/*.svg",
+				"!./src/img/icon/favicon.{jpg,jpeg,png,gif}"
+			],
 			dist: "./dist/img/",
-			watch: "./src/img/**/*.{jpg,jpeg,png}"
+			watch: "./src/img/icon/**/*.svg"
+		},
+		webp: {
+			src: "./src/img/*.{jpg,jpeg,png}",
+			dist: "./dist/img/",
+			watch: "./src/img/*.{jpg,jpeg,png}"
 		},
 		fonts: {
 			src: "./src/fonts/**/*.{ttf,otf,woff,woff2}",
@@ -105,6 +113,7 @@ export const server = () => {
 	gulp.watch(paths.styles.watch, styles);
 	gulp.watch(paths.scripts.watch, scripts);
 	gulp.watch(paths.images.watch, images);
+	gulp.watch(paths.spriteSvg.watch, sprite);
 	gulp.watch(paths.webp.watch, webpimages);
 };
 
@@ -119,40 +128,6 @@ export const serverConfig = () => gulp.src(paths.server_config.src)
 	.pipe(debug({
 		"title": "Server config"
 	}));
-
-/*export const smartGrid = cb => {
-	smartgrid("./src/styles/vendor", {
-		outputStyle: "less",
-		filename: "_smart-grid",
-		columns: 12, // number of grid columns
-		offset: "30px", // gutter width
-		mobileFirst: true,
-		mixinNames: {
-			container: "container"
-		},
-		container: {
-			fields: "15px" // side fields
-		},
-		breakPoints: {
-			xs: {
-				width: "320px"
-			},
-			sm: {
-				width: "576px"
-			},
-			md: {
-				width: "768px"
-			},
-			lg: {
-				width: "992px"
-			},
-			xl: {
-				width: "1200px"
-			}
-		}
-	});
-	cb();
-};*/
 
 export const views = () => gulp.src(paths.views.src)
 	.pipe(pug({
@@ -211,7 +186,15 @@ export const scripts = () => gulp.src(paths.scripts.src)
 		"title": "JS files"
 	}))
 	.on("end", browsersync.reload);
-
+export const sprite = () => gulp.src(paths.spriteSvg.src)
+	.pipe(spriteSvg({
+     mode: {
+      stack: {
+        sprite: "../sprite.svg"
+      }
+    }
+  }))
+  .pipe(gulp.dest(paths.spriteSvg.dist));
 export const images = () => gulp.src(paths.images.src)
 	.pipe(gulpif(production, imagemin([
 		imageminGiflossy({
@@ -286,9 +269,9 @@ export const favs = () => gulp.src(paths.favicons.src)
 	}));
 
 export const development = gulp.series(cleanFiles, /*smartGrid,*/
-	gulp.parallel(views, styles, scripts, images, webpimages, fonts, favs),
+	gulp.parallel(views, styles, scripts, images, sprite, webpimages, fonts, favs),
 	gulp.parallel(server));
 
-export const prod = gulp.series(cleanFiles, /*smartGrid,*/ serverConfig, views, styles, scripts, images, webpimages, fonts, favs);
+export const prod = gulp.series(cleanFiles, /*smartGrid,*/ serverConfig, views, styles, scripts, images, sprite, webpimages, fonts, favs);
 
 export default development;

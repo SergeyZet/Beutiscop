@@ -1,5 +1,10 @@
+//- [{className:'vk', href:'javascript:void(0)',value:'Вконтакте', img:'img/sprite.svg#vk', width:'24px', height:'14px'}]
+
 mixin social(mainClass,items)
-	+list(`${mainClass}__list`)
+	+list(`${mainClass}`)
 		each item in items
 			li(class=`${mainClass}__item`)
-				+link(`${mainClass}__link ${mainClass}__link--${item.className}`, `${item.href}`, `${item.value}`)
+				a(class=`${mainClass}__link ${mainClass}__link--${item.className}` href=`${item.href}`)
+					|!{item.value}
+					.social-img
+						+svg(`${item.img}`, `${item.width}`, `${item.height}`)

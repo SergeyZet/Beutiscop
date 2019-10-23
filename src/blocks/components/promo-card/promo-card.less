@@ -1,0 +1,48 @@
+.promo-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 178px;
+	padding: 8px 12px;
+	padding-bottom: 55px;
+	background-color: #f2edf4;
+	&__header {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		flex-wrap: wrap;
+		max-height: 45px;
+		overflow: hidden;
+	}
+	&__list-item {
+		margin-right: 25px;
+	}
+	&__slogan {
+		margin-top: 10px;
+	}
+	&__btn {
+		position: absolute;
+		left: 12px;
+		bottom: 8px;
+	}
+	&__link {
+		min-width: 188px;
+		padding: 6px 10px;
+		border: 1px solid @c-main;
+		border-radius: 4px;
+		transition: 0.2s;
+		&-text {
+			margin-right: 5px;
+		}
+		&:hover,
+		&:focus {
+			box-shadow: 1px 1px 5px rgba(124, 16, 127, 0.25);
+		}
+	}
+}

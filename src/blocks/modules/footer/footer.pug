@@ -1,0 +1,23 @@
+-
+	const col1 = ['Подключиться как салон', 'Подключиться как мастер', 'Инвесторам', 'Франчайзинг','Пресс-центр']
+-
+	const col2 = ['Все салоны', 'Все мастера', 'Специальные предложения', 'Магазин подарков','Пользовательское соглашение']
+-
+	const socialGroup =[{className:'vk',href:'javascript:void(0)', value:'Вконтакте', img:'img/sprite.svg#vk', id:'footer-vk', width:'24px', height:'14px'},{className:'fb',href:'javascript:void(0)', value:'facebook', img:'img/sprite.svg#fb', width:'12px', height:'24px'}, {className:'ok',href:'javascript:void(0)', value:'Однокласники', img:'img/sprite.svg#odkl', width:'14px', height:'24px'},{className:'inst',href:'javascript:void(0)', value:'instagram', img:'img/sprite.svg#inst', width:'24px', height:'24px'},{className:'ytube',href:'javascript:void(0)', value:'youtube', img:'img/sprite.svg#youtb', width:'24px', height:'18px'}, {className:'tg',href:'javascript:void(0)', value:'Telegram', img:'img/sprite.svg#tg', width:'24px', height:'20px'}]
+
+footer.page-footer
+	.layout-position
+		.footer-links
+			.footer-block-links
+				.column
+					ul.footer-list
+						each item in col1
+							li.footer-list__item
+								+link('footer-list__link','javascript:void(0)', `${item}`)
+				.column
+					ul.footer-list
+						each item in col2
+							li.footer-list__item
+								+link('footer-list__link','javascript:void(0)', `${item}`)
+			.footer-links__social
+				+social('social-list', socialGroup)

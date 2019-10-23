@@ -1,0 +1,70 @@
+.promo {
+	padding-bottom: 20px;
+	&__title {
+		margin-top: 40px;
+		@media(max-width: @phone) {
+			margin-top: 20px;
+		}
+	}
+	.layout-position {
+		@media(max-width: 950px) {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			max-width: 1440px;
+			padding-right: 22px;
+			padding-left: 22px;
+		}
+		@media(max-width: @tablet-p) {
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+		@media(max-width: @phone) {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+}
+.slider {
+	&__promo {
+		width: 100%;
+		margin-top: 20px;
+		padding-bottom: 5px;
+	}
+	&__promo-list {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		overflow: hidden;
+	}
+	&__promo-item {
+		display: flex;
+		width: 32.5%;
+		min-width: 320px;
+		margin-right: 0.8%;
+		margin-top: 15px;
+//del after add carousel-------------------
+		&:nth-child(n+4) {
+			display: none;
+		}
+		@media(max-width: 1270px) {
+			&:nth-child(n+3) {
+			display: none;
+			}
+		}
+		@media(max-width: 1270px) {
+			&:nth-child(n+3) {
+			display: none;
+			}
+		}
+		@media(max-width: 690px) {
+			&:nth-child(n+2) {
+			display: none;
+			}
+		}
+//--------------------------------------
+		@media(max-width: @phone) {
+			width: 100%;
+		}
+	}
+}

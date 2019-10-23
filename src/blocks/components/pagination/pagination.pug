@@ -1,0 +1,15 @@
+mixin pagination(color, className)
+	if color == 'white'
+		div(class=`slider-pagination ${className}`)
+			span(class='slider-pagination__item slider-pagination__item--white slider-pagination__item--active' tabindex='0')
+			span(class='slider-pagination__item slider-pagination__item--white' tabindex='0')
+			span(class='slider-pagination__item slider-pagination__item--white' tabindex='0')
+			span(class='slider-pagination__item slider-pagination__item--white' tabindex='0')
+			span(class='slider-pagination__item slider-pagination__item--white' tabindex='0')
+	else
+		.slider-pagination
+			span(class='slider-pagination__item slider-pagination__item--active' tabindex='0')
+			span(class='slider-pagination__item' tabindex='0')
+			span(class='slider-pagination__item' tabindex='0')
+			span(class='slider-pagination__item' tabindex='0')
+			span(class='slider-pagination__item' tabindex='0')

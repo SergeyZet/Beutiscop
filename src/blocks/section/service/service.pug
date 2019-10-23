@@ -1,22 +1,43 @@
 -
-	const slider = [{src:'../img/man-hair', alt:'Стрижка', text:'Мужская стрижка'},{src:'../img/man-hair', alt:'Стрижка', text:'Мужская стрижка'},{src:'../img/man-hair', alt:'Стрижка', text:'Мужская стрижка'}]
+	const slider = [{src:'img/man-hair', alt:'Стрижка', text:'Мужская стрижка'},{src:'img/w-hair', alt:'Стрижка', text:'Женская стрижка'},{src:'img/eyebrows', alt:'Коррекция бровей', text:'Коррекция бровей'},{src:'img/man-hair', alt:'Стрижка', text:'Мужская стрижка'},{src:'img/w-hair', alt:'Стрижка', text:'Женская стрижка'}]
 
 mixin service()
 	section.service
 		.layout-position
 			+title('service__title','У нас есть всё что вам нужно!')
-			.service__carousel
-				.slider
-					ul.slider__list
+			.service__gallery
+				.slider__service
+					ul.slider__service-list
 						each item in slider
-							li.slider__item
-								.slider__item-img
+							li.slider__service-item
+								.slider__service-img
 									+picture(`${item.src}`, '.jpg', `${item.alt}`)
-								.slider__item-text
+								.slider__service-text
 									span.slide-discr
 										|#{item.text}
-				.controls
-					button(class='btn slider__btn-prev' type='button')
-						.slider__btn-icon
-					button(class='btn slider__btn-next' type='button')
-						.slider__btn-icon
+					.slider-controls
+						button(class='btn btn-slider slider__btn-prev' type='button')
+							+svg('img/sprite.svg#arrow-prw','10px', '20px')
+						button(class='btn btn-slider slider__btn-next' type='button')
+							+svg('img/sprite.svg#arrow-nxt', '10px', '20px')
+					+pagination()
+			-
+				const blockLinks = [{className:'block-links__item block-links__item--hair block-links__item--big',text:'Парикмакерские услуги'}, {className:'block-links__item block-links__item--cosm block-links__item--big',text:'Косметология'}, {className:'block-links__item block-links__item--manic',text:'Ногтевой сервис'},{className:'block-links__item block-links__item--mas',text:'Массаж '},{className:'block-links__item block-links__item--hair2',text:'Парикмакерские услуги'}]
+			-
+				const blockLinksSl = [{className:'block-links__item block-links__item--hair2',text:'Парикмакерские услуги'}]
+			.service__block-links
+				.block-links
+					each item in blockLinks
+						div(class=`${item.className}`)
+							a(class='block-links__link' href='javascript:void(0)')
+								span.block-links__text
+									|#{item.text}
+				
+				.block-links__slider
+					.block-links__slider-item
+						each item in blockLinksSl
+							div(class=`${item.className}`)
+								a(class='block-links__link' href='javascript:void(0)')
+									span.block-links__text
+										|#{item.text}
+					+pagination('white', 'service__block-links-paginstion')

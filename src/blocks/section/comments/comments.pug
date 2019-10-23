@@ -1,0 +1,36 @@
+-
+	const comments = [{author:'Инна Петровна', comDate:'31.12.2019', master:'Брадобрей, <span>салон</span>', count:'4',count2:'5'},{author:'Инна Петровна', comDate:'31.12.2019', master:'Брадобрей, <span>салон</span>', count:'4',count2:'5'}]
+mixin comments()
+	section.index-comments
+		.layout-position
+			+title('comments__title', 'Впечатления наших гостей')
+			.comments__slider
+				each item in comments
+					.comments__slider-item
+						.comment
+							header.comment__header.index__comment
+								.comment__author
+									+text('text--big text--c-main', `${item.author}`)
+								.comment__date
+									time(datetime='2019-12-31')
+										+text('text--small', `${item.comDate}`)
+							.comment__body
+								.comment__body-row
+									.comment__master-name
+										+text('text--big text--c-main', `${item.master}`)
+									.rating
+										.rating__item 
+											+text('', 'Оценка автора:')
+											+text('text--c-black text--big rating__count', `${item.count}`)
+											
+										.rating__item
+											+text('', 'Рейтинг салона:')
+											+text('text--c-black text--big rating__count', `${item.count2}`)
+								.comment__content
+									+discr('comment__text', 'Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.')
+			.slider-controls
+				button(class='btn btn-slider slider__btn-prev' type='button')
+					+svg('img/sprite.svg#arrow-prw', '10px', '20px')
+				button(class='btn btn-slider slider__btn-next' type='button')
+					+svg('img/sprite.svg#arrow-nxt', '10px', '20px')
+			+pagination()

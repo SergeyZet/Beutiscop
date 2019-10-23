@@ -1,0 +1,24 @@
+//- {master:'Брадобрей, <span>салон</span>', promoDate:'Действует до 31.12.2019', service:['Парикмахерские услуги', 'Парикмахерские услуги'], discr:'Приведи друга и оба получите скидку 10% на стрижку бороды', btnText:'300'}
+
+mixin promo-card(item)
+		.promo-card
+			header.promo-card__header
+				.promo-card__master
+					+text('text--big text--c-main', `${item.master}`)
+				.promo-card__date
+					time(datetime='2019-12-31')
+						+text('text--small', `${item.promoDate}`)
+			.promo-card__body
+				.promo-card__serv
+					ul.promo-card__list
+						each val in item.service
+							li.promo-card__list-item
+								+text('', `${val}`)
+				.promo-card__slogan
+					+discr('',`${item.discr}`)
+				.promo-card__btn
+					a(class='link promo-card__link' href='javascript:void(0)')
+						|
+						+text('promo-card__link-text', 'Стоимость: ')
+						+text('text--big text--c-main', `${item.btnText}`)
+				

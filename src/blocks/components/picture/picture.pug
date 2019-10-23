@@ -1,7 +1,7 @@
 mixin picture(src, format, alt)
 	picture
-		source(type="image/webp" media='(max-width:600px)' srcset=`${src}-mobile.webp`)
-		source(media='(max-width:600px)' srcset=`${src}-mobile${format}`)
+		source(type="image/webp" media='(max-width:400px)' srcset=`${src}-mobile.webp`)
+		source(media='(max-width:420px)' srcset=`${src}-mobile${format}`)
 		source(type="image/webp" media='(max-width:900px)' srcset=`${src}-tablet.webp`)
 		source(media='(max-width:900px)' srcset=`${src}-tablet${format}`)
 		source(type="image/webp" srcset=`${src}-desktop.webp`)

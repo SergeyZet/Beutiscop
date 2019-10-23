@@ -82,7 +82,8 @@
 	padding-left: 20px;
 	.ff-300();
 	font-size: @font-14;
-	background: url('@{bg-icon}location.svg') no-repeat left center;
+	background: url('@{bg-svg}location') no-repeat left center;
+	background-size: 12px 16px;
 	&:hover,
 	&:focus {
 		transform: scale(1.05);
@@ -105,30 +106,33 @@
 		height: 40px;
 		font-size: 0;
 		border-radius: 50%;
+		cursor: pointer;
+		outline: none;
+		background-color: @c-blue;
 	}
 	&__link--hair {
-		background: @c-blue url('@{bg-icon}hair.svg') no-repeat center;
+		background-color: @c-blue;
 		&:hover,
 		&:focus {
 			background-color: lighten(@c-blue, 4%);
 		}
 	}
 	&__link--cosm {
-		background: @c-red url('@{bg-icon}cosmetic.svg') no-repeat center;
+		background-color: @c-red;
 		&:hover,
 		&:focus {
 			background-color: lighten(@c-red, 4%);
 		}
 	}
 	&__link--manic {
-		background: @c-yell url('@{bg-icon}manicure.svg') no-repeat center;
+		background-color: @c-yell;
 		&:hover,
 		&:focus {
 			background-color: lighten(@c-yell, 4%);
 		}
 	}
 	&__link--massage {
-		background: @c-green url('@{bg-icon}massage.svg') no-repeat center;
+		background-color: @c-green;
 		&:hover,
 		&:focus {
 			background-color: lighten(@c-green, 4%);
@@ -169,22 +173,22 @@
 		}
 	}
 	&__link--favorite {
-		background: transparent url('@{bg-icon}heart.svg') no-repeat center;
+		background: transparent url('@{bg-svg}heart') no-repeat center;
 		background-size: 75%;
 	}
 	&__link--notif {
-		background: transparent url('@{bg-icon}notif.svg') no-repeat center;
+		background: transparent url('@{bg-svg}notif') no-repeat center;
 		background-size: 75%;
 	}
 	&__link--chat {
-		background: transparent url('@{bg-icon}mail.svg') no-repeat center;
+		background: transparent url('@{bg-svg}mail') no-repeat center;
 		background-size: 75%;
 	}
 }
 .btn-login-menu {
 	width: 20px;
 	height: 20px;
-	background: transparent url('@{bg-icon}user.svg') no-repeat center;
+	background: transparent url('@{bg-svg}user') no-repeat center;
 	background-size: 60%;
 }
 .user-block {

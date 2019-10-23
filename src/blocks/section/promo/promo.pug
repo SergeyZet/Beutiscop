@@ -1,0 +1,20 @@
+-
+	const promoCards= [{master:'Брадобрей, <span>салон</span>', promoDate:'Действует до 31.12.2019', service:['Парикмахерские услуги', 'Стрижка бороды'], discr:'Приведи друга и оба получите скидку 10% на стрижку бороды', btnText:'300'},
+		{master:'Аннет, <span>мастер</span>', promoDate:'Действует до 31.12.2019', service:['Ногтевой сервис', 'Маникюр'], discr:'Маникюр и педикюр за 1200 руб', btnText:'400'},{master:'Кармэн, <span>салон</span>', promoDate:'Действует до 31.12.2019', service:['Ногтевой сервис', 'Окрашивание волос'], discr:'При заказе услуги краска премиум-качества в подарок', btnText:'500'}]
+
+mixin promo()
+	.promo
+		.layout-position
+			+title('promo__title', 'Специальные предложения')
+			.slider__promo
+				ul.slider__promo-list#promo
+					each card in promoCards
+						li.slider__promo-item
+							+promo-card(card)
+
+				.slider-controls
+					button(class='btn btn-slider slider__btn-prev' type='button')
+						+svg('img/sprite.svg#arrow-prw', '10px', '20px')
+					button(class='btn btn-slider slider__btn-next' type='button')
+						+svg('img/sprite.svg#arrow-nxt', '10px', '20px')
+				+pagination()
