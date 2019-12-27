@@ -1,0 +1,22 @@
+mixin news-block(items)
+	section.news-block
+		each item in items
+			.news-block__item
+				article.news
+					.news__img
+						img(src=`${item.img}` alt=`${item.alt}`)
+					.news__content
+						.news__content-top
+							.news__container.news__container-img
+								img(src=`${item.img}` alt=`${item.alt}`)
+							.news__container
+								+subtitle(`${item.titleClass}`,`${item.titleText}`)
+								.news__date 
+									time(datetime='2019-01-01')
+										+text('text--small', `${item.date}`)
+						.news__text
+							|Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке. Это тестовый контент сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке. Это тестовый контент
+							a(class='news__text-link' href='news-item.html')
+								|...читать всё
+		.news__btn
+			+linkBtn('Показать ещё','javascript:void(0)','news__btn-link link-btn--text-upper')

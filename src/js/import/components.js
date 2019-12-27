@@ -1,1 +1,1 @@
-import "../../blocks/section/promo/promo.js";
+import "../../blocks/components/accordion/accordion.js";

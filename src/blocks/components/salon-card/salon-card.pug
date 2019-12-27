@@ -1,0 +1,51 @@
+mixin salon-card(item)
+	article.salon-card
+		header.salon-card-header
+			.salon-card-header__top-line
+				.salon-group
+					.salon-group__item
+						+salon-logo(`${item.className}`,`${item.logoChar}`)
+						.salon-group__item-content
+							.salon-name
+								+text('text--big text--c-main', `${item.master}`)
+								+rating()
+									.rating__item.salon-name__rating
+										+svg('img/sprite.svg#star', '18', '18')
+										+text('text--big rating__count', `${item.rate}`)
+							.salon-online
+								if online
+									+text('text text--c-black text--circle-gl filter-service__item-text', 'Online')
+								else
+									+text('text text--c-black text--circle-gl filter-service__item-text', 'Online')
+			.salon-adress
+				.salon-adress__item
+					+svg('img/sprite.svg#location', '12', '16')
+				.salon-adress__item
+					+text('text--c-black',`${item.adress}`)
+				.salon-adress__item
+					+link('link--under link--small link--c-main',`${item.adrLink}`,'На карте')
+		.salon-card__service
+			table.table-service
+				each obj in item.tableService
+					each val,key in obj
+						tr
+							th|
+								if key=='Миостимуляция'
+									+text('text--circle-y text--c-black',`${key}`)
+								if key=='Шеллак'
+									+text('text--circle-r text--c-black',`${key}`)
+								if key=='Окрашивание'
+									+text('text--circle-b text--c-black',`${key}`)
+							th.th-price|
+								+text('text--big-m text--c-black',`${val}`)
+		footer.salon-footer
+			.chat-link.salon-footer__chat-link
+				a(class='link chat-link' href='javascript:void(0)')
+					+svg('img/sprite.svg#chat', '20' , '20')
+			.order-link.salon-footer__order-link
+				+linkBtn('Записаться','salon-cards.html', 'link-btn--big link-btn--text-upper')
+				.order-link__hint
+					+svg('img/sprite.svg#q', '6', '10')
+					.order-link__hint-text.salon-footer__hint-text
+						p
+							|Мастер свяжется с вами, согласует условия и подтвердит запись

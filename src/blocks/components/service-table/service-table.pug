@@ -1,0 +1,52 @@
+-
+	const leftCol = ['Инъекционная', 'Контурная пластика', 'Уход за кожей лица', 'Визаж', 'Татуаж', 'Ресницы и брови', 'Эпиляция', 'Пирсинг', 'Солярий, хамам']
+	const rightCol = [
+	{service:'Миостимуляция',price:'800 руб',active: true},
+	{service:'Лимфодренаж',price:'1200 руб',active: false},
+	{service:'Микротоки',price:'1000 руб',active: false},
+	{service:'Дарсенвализация',price:'400 руб',active: false},
+	{service:'Ультразвуковая',price:'1500 руб',active: false},
+	{service:'Криолиполиз',price:'500 руб',active: false},
+	{service:'Эндосфера',price:'2200 руб',active: true},
+	{service:'Вакуум',price:'800 руб',active: false},
+	{service:'Лазерная шлифовка лица',price:'1000 руб',active: false}
+	]
+mixin service-table()
+	.service-table
+		.service-table__left-col
+			+list('service-table__list')
+				li.service-table__tab
+					span.service-table__tab-text.service-table__tab-text--active Аппаратная
+					ul.service-table__list.price-cosm-app-mobile
+						each item in rightCol
+							if item.active
+								li.service-table__list-item
+									.service-table__checkbox
+										span(class=`checkbox service-table__checkbox--active`)
+										|#{item.service}
+									span.service-table__price #{item.price}
+							else
+								li.service-table__list-item
+									.service-table__checkbox
+										span(class='checkbox')
+										|#{item.service}
+									span.service-table__price #{item.price}
+					each item in leftCol
+						li.service-table__list-item #{item}
+
+		.service-table__right-col
+			ul.service-table__list.price-cosm-app
+				each item in rightCol
+					if item.active
+						li.service-table__list-item
+							.service-table__checkbox
+								span(class=`checkbox service-table__checkbox--active`)
+								|#{item.service}
+							span.service-table__price #{item.price}
+					else
+						li.service-table__list-item
+							.service-table__checkbox
+								span(class='checkbox')
+								|#{item.service}
+							span.service-table__price #{item.price}
+

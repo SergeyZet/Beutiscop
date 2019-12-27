@@ -1,4 +1,5 @@
 .link {
+	position: relative;
 	display: inline-block;
 	margin: 0;
 	padding: 0;
@@ -10,21 +11,39 @@
 	border: none;
 	vertical-align: top;
 	color: #000000;
-}
-.link-btn {
-	max-width: 300px;
-	padding: 10px 20px;
-	.ff-600();
-	font-size: @font-14;
-	color: @c-w;
-	border-radius: 50px;
-	background-color: @c-main;
-	&--white-style {
+	&::before {
+		content:'';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 12px;
+		height: 100%;
+	}
+	&--under {
+		text-decoration: underline;
+	}
+	&--small {
 		.ff-300();
-		padding-top: 9px;
-		padding-bottom: 9px;
+		font-size: @font-14;
+	}
+	&--c-main {
 		color: @c-main;
-		background-color: @c-w;
-		border: 1px solid @c-main;
+	}
+	&__bmarks,
+	&__dislike,
+	&__share {
+		padding-left: 15px;
+		/* background: url('@{bg-svg}heart') no-repeat left center;
+		background-size: 12px 12px; */
+	}
+	&__bmarks::before {
+			background: url('@{bg-svg}heart') no-repeat left center;
+	}
+	&__dislike::before {
+		background: url('@{bg-svg}icon-dislike') no-repeat left center;
+	}
+	&__share::before {
+		background: url('@{bg-svg}icon-share') no-repeat left center;
 	}
 }
+

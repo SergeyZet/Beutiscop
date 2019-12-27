@@ -6,6 +6,11 @@
 			margin-top: 20px;
 		}
 	}
+	&__slider {
+		width: 100%;
+		margin-top: 20px;
+		padding-bottom: 5px;
+	}
 	.layout-position {
 		@media(max-width: 950px) {
 			display: flex;
@@ -27,9 +32,7 @@
 }
 .slider {
 	&__promo {
-		width: 100%;
-		margin-top: 20px;
-		padding-bottom: 5px;
+		
 	}
 	&__promo-list {
 		display: flex;
@@ -39,14 +42,14 @@
 	}
 	&__promo-item {
 		display: flex;
-		width: 32.5%;
+		/* width: 32.5%; */
 		min-width: 320px;
 		margin-right: 0.8%;
 		margin-top: 15px;
 //del after add carousel-------------------
-		&:nth-child(n+4) {
+		/* &:nth-child(n+4) {
 			display: none;
-		}
+		} */
 		@media(max-width: 1270px) {
 			&:nth-child(n+3) {
 			display: none;

@@ -1,8 +1,8 @@
 -
-	const menuService = [{className:'hair', href:'javascript:void(0)',value:'hair', img:'img/sprite.svg#hair', width:'17px', height:'20px'},
-		{className:'cosm',href:'javascript:void(0)',value:'cosmetic', img:'img/sprite.svg#cosmetic', width:'20px', height:'20px'},
-		{className:'manic',href:'javascript:void(0)',value:'manicure', img:'img/sprite.svg#manicure', width:'12px', height:'22px'},
-		{className:'massage',href:'javascript:void(0)',value:'massage', img:'img/sprite.svg#massage', width:'18px', height:'20px'}]
+	const menuService = [{className:'hair', href:'catalog.html',value:'hair', img:'img/sprite.svg#hair', width:'17px', height:'20px'},
+		{className:'cosm',href:'catalog.html',value:'cosmetic', img:'img/sprite.svg#cosmetic', width:'20px', height:'20px'},
+		{className:'manic',href:'catalog.html',value:'manicure', img:'img/sprite.svg#manicure', width:'12px', height:'22px'},
+		{className:'massage',href:'catalog.html',value:'massage', img:'img/sprite.svg#massage', width:'18px', height:'20px'}]
 -
 	const notif = [{className:'favorite', href:'javascript:void(0)', value:'favorite', active:true}, {className:'notif', href:'javascript:void(0)', value:'notification', active:false}, {className:'chat', href:'javascript:void(0)', value:'chat', active:false}]
 
@@ -21,7 +21,7 @@ header.page-header
 				.menu-service.page-header__menu-service
 					+social('menu-service', menuService)
 				.page-header__btn-block
-					+linkBtn('Катталог мастеров','javascript:void(0)')
+					+linkBtn('Катталог мастеров','catalog.html')
 					+linkBtn('Стать специалистом','javascript:void(0)','link-btn--white-style')
 			.container.page-header__right-block
 				.notification.page-header__notification

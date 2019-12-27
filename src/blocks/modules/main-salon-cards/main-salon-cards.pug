@@ -1,0 +1,110 @@
+-
+	const salonHeader =[{className:'salon-logo--bg-g salon-logo--big', logoChar:'М',master:'Марина Ивановна, <span>27</span>', adress:'ул. Тверская-Ямская, 14к3',adrLink:'javascript:void(0)', online:true, rate:'4.2', rateFit:'6',rateOrders:'8'}]
+	const salonItemPromo = [
+	{master:'Брадобрей, <span>салон</span>', promoDate:'Действует до 31.12.2019', service:['Парикмахерские услуги', 'Стрижка бороды'], discr:'Приведи друга и оба получите скидку 10% на стрижку бороды', btnText:'300'},
+	{master:'Аннет, <span>мастер</span>', promoDate:'Действует до 31.12.2019', service:['Ногтевой сервис', 'Маникюр'], discr:'Маникюр и педикюр за 1200 руб', btnText:'400'},
+	{master:'Кармэн, <span>салон</span>', promoDate:'Действует до 31.12.2019', service:['Ногтевой сервис', 'Окрашивание волос'], discr:'При заказе услуги краска премиум-качества в подарок', btnText:'500'}
+	]
+main.salon-item
+	.layout-position
+		each item in salonHeader
+			header.salon-header.salon-item__header
+				.salon-header__left-block
+					.salon-header__left-block-wrap
+						+salon-logo(`${item.className}`,`${item.logoChar}`)
+						.salon-header__left-block-content
+							.salon-name
+								+text('text--big text--c-black salon-item__name', `${item.master}`)
+							.salon-online
+								if online
+									+text('text--c-black text--circle-gl filter-service__item-text', 'Online')
+								else
+									+text('text text--c-black text--circle-gl filter-service__item-text', 'Online')
+					+rating('salon-header__rating')
+						.rating__item.salon-header__rating-item
+							+svg('img/sprite.svg#star', '18', '18')
+							+text('text--big-m text--c-black rating__count', `${item.rate}`)
+						.rating__item.salon-header__rating-item
+							+text('text--big-m text--c-main', 'Отзывы :')
+							+text('text--c-black rating__count', `${item.rateFit}`)
+						.rating__item.salon-header__rating-item
+							+text('text--big-m text--c-main', 'Выполнено :')
+							+text('text--c-black rating__count', `${item.rateOrders}`)
+				.salon-header__right-block
+					.salon-header__order
+						.chat-link.salon-header__order-chat
+							a(class='link chat-link' href='javascript:void(0)')
+								+svg('img/sprite.svg#chat', '20' , '20')
+						.order-link.salon-header__order-link
+							+linkBtn('Записаться','javascript:void(0)', 'link-btn--big link-btn--text-upper')
+							.order-link__hint
+								+svg('img/sprite.svg#q', '6', '10')
+								.order-link__hint-text.salon-footer__hint-text
+									p
+										|Мастер свяжется с вами, согласует условия и подтвердит запись
+					.salon-header__block-links
+						+link('link--under link--small link--c-main link__bmarks','javascript:void(0)','В избранное')
+						+link('link--under link--small link--c-main link__dislike','javascript:void(0)','Пожаловаться')
+						+link('link--under link--small link--c-main link__share','javascript:void(0)','Поделиться')
+				.salon-header__service-info
+					.salon-adress
+						.salon-adress__item
+							+svg('img/sprite.svg#location', '16', '16')
+						.salon-adress__item
+							+text('text--c-black',`${item.adress}`)
+					.salon-bottom-line
+						.salon-bottom-line__item
+							+svg('img/sprite.svg#icon-pay', '16', '16')
+							+text('text--c-black text--ml','Оплата:')
+							+text('text--big text--c-main text--ml', 'наличными, картой, с карты на карту')
+						.salon-bottom-line__item
+							+svg('img/sprite.svg#icon-place', '16', '16')
+							+text('text--c-black text--ml','Место работы:')
+							+text('text--big text--c-main text--ml', 'салон, выезд')
+			.salon-item__about-us
+				strong.salon-item__about-us-title
+					|О себе
+				+discr('','Рыбатекст используется дизайнерами, проектировщиками и фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым. Это тестовый конт ент, который не должен нести никакого смысла, лишь показать наличие самого текста или продемонстрировать типографику в деле.')
+			.salon-item__gallery
+				.salon-item__gallery-wrap.owl-carousel#salon-item-slider
+					+img('img/salon-item1.jpg', 'img1')
+					+img('img/salon-item2.jpg', 'img2')
+					+img('img/salon-item3.jpg', 'img3')
+					+img('img/salon-item1.jpg', 'img1')
+					+img('img/salon-item2.jpg', 'img2')
+					+img('img/salon-item3.jpg', 'img3')
+					+img('img/salon-item1.jpg', 'img1')
+					+img('img/salon-item2.jpg', 'img2')
+					+img('img/salon-item3.jpg', 'img3')
+				.salon-item__slider-control--prev#salon-item-prev
+					button(class='btn btn-slider btn-slider--w slider__btn-prev' id='service-btn-prev' type='button')
+						+svg('img/sprite.svg#arrow-prw','10px', '20px')
+				.salon-item__slider-control--next#salon-item-next
+					button(class='btn btn-slider btn-slider--w slider__btn-next' id='service-btn-next' type='button')
+						+svg('img/sprite.svg#arrow-nxt', '10px', '20px')
+			.salon-item__container
+				.salon-item__left-block
+					.salon-item__service-accordion
+						+title('salon-item__block-title title--small title--text-left title--tt-n', 'Услуги')
+						+accordion('salon-item__accordion')
+						.salon-item__btn-block
+							+linkBtn('Записаться', 'javascript:void(0)')
+					.salon-item__responses
+						+title('salon-item__block-title salon-item__responses-title title--small title--text-left title--tt-n', 'Отзывы')
+						+response('salon-item__response', '1')
+						+response('salon-item__response-slider owl-carousel', '2')
+				.salon-item__right-block
+					+title('salon-item__block-title title--small title--text-left title--tt-n', 'Акции и скидки')
+					.salon-item__promo
+						each item in salonItemPromo
+							.salon-item__promo-item
+								+promo-card(item)
+					.salon-item__promo-slider
+						.salon-item__slider-items.owl-carousel#salon-item__promo-slider
+							each item in salonItemPromo
+								+promo-card(item)
+						.slider-controls.salon-item__promo-slider-controls
+							button(class='btn btn-slider slider__btn-prev' id='salon-item-btn-prev' type='button')
+								+svg('img/sprite.svg#arrow-prw', '10px', '20px')
+							button(class='btn btn-slider slider__btn-next' id='salon-item-btn-next' type='button')
+								+svg('img/sprite.svg#arrow-nxt', '10px', '20px')

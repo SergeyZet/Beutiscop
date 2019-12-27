@@ -6,25 +6,12 @@
 	display: flex;
 	width: 100%;
 	margin-top: 24px;
-	&-item {
-		width: 50%;
-		margin-right: 30px;
-		&:nth-child(2n) {
-			margin-right: 0;
-		}
-		@media(max-width: @phone) {
-			width: 100%;
-			margin-right: 0;
-			&:nth-child(n+2) {
-				display: none;
-			}
-		}
-	}
 }
 .index__comment {
 	border-bottom: 1px solid #ded9e0;
 }
 .comment {
+	padding-left: 3px;
 	&__header {
 		display: flex;
 		width: 100%;
@@ -49,16 +36,5 @@
 	}
 	&__content {
 		margin-top: 12px;
-	}
-}
-.rating {
-	display: flex;
-	margin-right: -15px;
-	&__item {
-		margin-right: 15px;
-	}
-	&__count {
-		font-size: 14px;
-		margin-left: 3px;
 	}
 }

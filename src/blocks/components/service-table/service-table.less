@@ -1,0 +1,68 @@
+.service-table {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding-top: 8px;
+	&__left-col {
+		width: 35%;
+		overflow: hidden;
+		@media(max-width:@phone) {
+			width: 100%;
+		}
+	}
+	&__list {
+		flex-direction: column;
+		width: 100%;
+	}
+	&__list-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 8px 15px;
+		.ff-300();
+		font-size: @font-14;
+		cursor: pointer;
+	}
+
+	&__list-item--active {
+		border-radius: 5px;
+		background-color: #f2edf4;
+	}
+	/* &__tab {
+		width: 100%;
+	} */
+	&__tab-text {
+		display: block;
+		padding: 8px 15px;
+		.ff-300();
+		font-size: @font-14;
+		cursor: pointer;
+	}
+	&__tab-text--active {
+		border-radius: 5px;
+		background-color: #f2edf4;
+	}
+	&__right-col {
+		display: flex;
+		justify-content: space-between;
+		width: 63%;
+		@media(max-width:@phone) {
+			display: none;
+		}
+	}
+	&__checkbox {
+		display: flex;
+		align-items: center;
+		&--active {
+			background-color: @c-main;
+			border-color: @c-main;
+		}
+	}
+	
+}
+.price-cosm-app-mobile {
+	display: none;
+	@media(max-width:@phone) {
+		display: block;
+	}
+}

@@ -1,0 +1,16 @@
+-
+	const resp = [{author:'Ольга Сидорова', comDate:'31.12.2019', rate:'4.7'}, {author:'Александра Сидорова', comDate:'31.12.2019', rate:'4.9'}, {author:'Анастасия Васильева', comDate:'21.11.2019', rate:'4.9'}, {author:'Татьяна Иванова', comDate:'01.11.2019', rate:'4.5'}]
+mixin response(className, id)
+	div(class=`response ${className}` id=id)
+		each item in resp
+			.response__item
+				header.response__header
+					.response__header-container
+						+text('response__author text--big text--c-main', `${item.author}`)
+						time(datetime='2019-12-31')
+							+text('text--small', `${item.comDate}`)
+					+rating()
+						+svg('img/sprite.svg#star', '18', '18')
+						+text('text--big-m text--c-black rating__count', `${item.rate}`)
+				.response__body
+					+discr('response__discr','Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях.')

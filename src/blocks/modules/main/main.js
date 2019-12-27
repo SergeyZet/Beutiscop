@@ -1,0 +1,34 @@
+import $ from 'jquery';
+
+$(document).ready(function(){
+  $('#service-btn-prev').click(function(){
+		$('#service-slider').trigger('prev.owl.carousel');
+	});
+	$('#service-btn-next').click(function(){
+		$('#service-slider').trigger('next.owl.carousel');
+	});
+  $('#promo-btn-prev').click(function(){
+    $('#promo').trigger('prev.owl.carousel');
+  });
+  $('#promo-btn-next').click(function(){
+    $('#promo').trigger('next.owl.carousel');
+  });
+  $('#comment-btn-prev').click(function(){
+    $('#comment-slider').trigger('prev.owl.carousel');
+  });
+  $('#comment-btn-next').click(function(){
+    $('#comment-slider').trigger('next.owl.carousel');
+  });
+  $('#salon-item-prev').click(function(){
+    $('#salon-item-slider').trigger('prev.owl.carousel');
+  });
+  $('#salon-item-next').click(function(){
+    $('#salon-item-slider').trigger('next.owl.carousel');
+  });
+  $('#salon-item-btn-prev').click(function(){
+    $('#salon-item__promo-slider').trigger('prev.owl.carousel');
+  });
+  $('#salon-item-btn-next').click(function(){
+    $('#salon-item__promo-slider').trigger('next.owl.carousel');
+  });
+});

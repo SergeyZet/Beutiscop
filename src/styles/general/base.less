@@ -8,7 +8,7 @@ html {
 body {
 	display: flex;
 	justify-content: center;
-	font-family: 'Arial', 'sans-serif';
+	font-family: @main;
 	font-size: 16px;
 	width: 100%;
 	min-width: 320px;
@@ -88,11 +88,11 @@ a {
 		padding-right: 22px;
 	}
 }
-/* .img-responsive {
-	max-width: 500px;
-	width: 100%;
-	height: auto;
-} */
+.layout-position--catalog {
+	.layout-position--header();
+	flex-direction: column;
+	overflow: hidden;
+}
 input {
 	border: none;
 }

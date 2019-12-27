@@ -1,0 +1,14 @@
+mixin accordion(id)
+	div(class='accordion' id=id)
+		.accordion__item
+			+subtitle('accordion__item-title accordion__item-title--blue salon-item__accordion-title', 'Парикмахерские услуги')
+		.accordion__content
+			+service-table()
+		.accordion__item
+			+subtitle('accordion__item-title accordion__item-title--red salon-item__accordion-title', 'Косметология')
+		.accordion__content
+			+service-table()
+		.accordion__item
+			+subtitle('accordion__item-title accordion__item-title--yell salon-item__accordion-title', 'Ногтевой сервис')
+		.accordion__content
+			+service-table()

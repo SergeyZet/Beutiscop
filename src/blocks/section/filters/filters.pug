@@ -1,0 +1,52 @@
+//-catalog-filters
+mixin filters()
+	.filters
+		.filter-service.catalog__filters-group
+			+linkBtn('Фильтры','javascript:void(0)', 'filter-service__open-btn link-btn--text-upper')
+			.filter-item.filter-service__item
+				+text('text text--c-black text--circle-r filter-service__item-text', 'Криолиполиз')
+				+button('remove-item','button','Удалить')
+			.filter-item.filter-service__item
+				+text('text text--c-black text--circle-r filter-service__item-text', 'Крио')
+				+button('remove-item','button','Удалить')
+			.filter-service__add-btn
+				+button('add-item','button','Добавить')
+		.catalog__filters-group.box-order-1
+			.catalog__filters-group-wrapper
+				.filter-category
+					.filter-category__item.filter-item.filter-item--pointer
+						+text('text text--c-black text--arrow-down', 'По цене')
+					.filter-category__dropdown
+						ul.dropdown-list
+							li.dropdown-list__item
+								+text('text text--c-black text--arrow-down', 'По цене')
+							li.dropdown-list__item
+								+text('text text--c-black text--arrow-up', 'По цене')
+							li.dropdown-list__item
+								+text('text text--c-black text--arrow-down', 'По рейтингу')
+							li.dropdown-list__item
+								+text('text text--c-black text--arrow-up', 'По рейтингу')
+							li.dropdown-list__item
+								+text('text text--c-black text--arrow-down', 'По категории')
+							li.dropdown-list__item
+								+text('text text--c-black text--arrow-up', 'По категории')
+				.filter-on-vision
+					.filter-on-vision__item.filter-item.filter-item--pointer
+						+text('text text--c-black', 'Отображать по :')
+						+text('text text--c-main text--big', '24')
+					.filter-on-vision__dropdown
+						ul.dropdown-list
+							li.dropdown-list__item
+								+text('text text--c-black', '8')
+							li.dropdown-list__item
+								+text('text text--c-black', '16')
+							li.dropdown-list__item
+								+text('text text--c-black', '24')
+			.filter-item.filter-item__online.filter-item--pointer
+				sapn.checkbox.checkbox-active
+				+text('text--c-black', 'Только онлайн')
+		.catalog__filters-group.box-order-2
+			.filter-item__link
+				+linkBtn('Смотреть на карте','javascript:void(0)', 'link-btn--text-upper link-on-map__desktop')
+				a(class='link link-btn link-on-map__mobile' href='javascript:void(0)')
+					+svg('img/sprite.svg#on-map','20','20')

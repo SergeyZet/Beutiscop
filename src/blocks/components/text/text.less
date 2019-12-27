@@ -1,7 +1,15 @@
 .text {
+	position: relative;
 	.ff-300();
 	font-size: @font-14;
 	color: #908e91;
+	&--ml {
+		margin-left: 10px;
+	}
+	&--big-m {
+		.ff-600();
+		font-size: @font-14;
+	}
 	&--small {
 		font-size: 12px;
 		color: #615f62;
@@ -18,5 +26,65 @@
 	}
 	span {
 		.ff-300();
+	}
+	&::before {
+		content:'';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+	}
+	&--circle-r {
+		padding-left: 10px;
+		&:before {
+			background-color: @c-red;
+		}
+	}
+	&--circle-g {
+		padding-left: 10px;
+		&:before {
+			background-color: @c-green;
+		}
+	}
+	&--circle-gl {
+		padding-left: 10px;
+		&:before {
+			background-color: @c-green-l;
+		}
+	}
+	&--circle-b {
+		padding-left: 10px;
+		&:before {
+			background-color: @c-blue;
+		}
+	}
+	&--circle-y {
+		padding-left: 10px;
+		&:before {
+			background-color: @c-yell;
+		}
+	}
+	&--arrow-down,
+	&--arrow-up {
+		padding-right: 20px;
+	}
+	&--arrow-up::after {
+		content:'';
+		position: absolute;
+		top: 15%;
+		right: 0;
+		border: 5px solid transparent;
+		border-bottom-color: @c-main; 
+	}
+	&--arrow-down::after {
+		content:'';
+		position: absolute;
+		top: 42%;
+		right: 0;
+		border: 5px solid transparent;
+		border-top-color: @c-main; 
 	}
 }

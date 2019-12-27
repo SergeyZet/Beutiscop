@@ -7,7 +7,7 @@ import gulpif from "gulp-if";
 import browsersync from "browser-sync";
 import autoprefixer from "gulp-autoprefixer";
 import pug from "gulp-pug";
-//import pugbem from "gulp-pugbem";
+import pugbem from "gulp-pugbem";
 import less from "gulp-less";
 import groupmediaqueries from "gulp-group-css-media-queries";
 import mincss from "gulp-clean-css";
@@ -72,6 +72,7 @@ const webpackConfig = require("./webpack.config.js"),
 			dist: "./dist/img/",
 			watch: "./src/img/**/*.{jpg,jpeg,png,gif,svg}"
 		},
+		spriteSvg: {
 			src: [
 				"./src/img/icon/**/*.svg",
 				"!./src/img/icon/favicon.{jpg,jpeg,png,gif}"
@@ -131,7 +132,7 @@ export const serverConfig = () => gulp.src(paths.server_config.src)
 
 export const views = () => gulp.src(paths.views.src)
 	.pipe(pug({
-		//plugins: [pugbem],
+		plugins: [pugbem],
 		locals: pageData,
 		pretty: true
 	}))

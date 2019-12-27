@@ -1,0 +1,9 @@
+mixin rating(className)
+	if className
+		div(class=`rating ${className}`)
+			if block
+				block
+	else
+		.rating
+			if block
+				block
